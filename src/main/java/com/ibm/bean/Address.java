@@ -1,10 +1,5 @@
 package com.ibm.bean;
 
-import javax.persistence.Entity;
-import javax.persistence.Table;
-
-@Entity
-@Table(name = "address_details")
 public class Address {
 
 	private String doorNo;

@@ -2,11 +2,6 @@ package com.ibm.bean;
 
 import java.time.LocalDate;
 
-import javax.persistence.Entity;
-import javax.persistence.Table;
-
-@Entity
-@Table(name = "credit_card_details")
 public class CreditCard {
 	private long cardId;
 	private String bankName;

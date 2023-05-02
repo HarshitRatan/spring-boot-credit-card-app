@@ -1,10 +1,5 @@
 package com.ibm.bean;
 
-import javax.persistence.Entity;
-import javax.persistence.Table;
-
-@Entity
-@Table(name = "customer_details")
 public class Customer {
 	
 	private String userId;
