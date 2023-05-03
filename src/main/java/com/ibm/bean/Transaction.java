@@ -6,8 +6,8 @@ import java.time.LocalTime;
 import javax.persistence.Entity;
 import javax.persistence.Table;
 
-@Entity
-@Table(name = "transaction_details")
+//@Entity
+//@Table(name = "transaction_details")
 public class Transaction {
 	private String status;
 	private String refNo;
