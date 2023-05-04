@@ -2,12 +2,31 @@ package com.ibm.bean;
 
 import java.time.LocalDate;
 
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.Table;
+
+@Entity
+@Table(name="Statement_tables")
 public class Statement {	
+	@Id
+	@Column(name="sid")
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private long statementId;
+	@Column(name="dueamt")
+//	@NotEmpty(message="dueAmount can not be more than 500 ")
 	private double dueAmount;
+	@Column(name="billingamt")
+//	@NotEmpty(message="billingDate can not exceed a month ")
 	private LocalDate billingDate;
+	@Column(name="duedate")
 	private LocalDate dueDate;
-	private Customer customer;
+	@Column(name="customer")
+//	@OneToOne(cascade = CascadeType.ALL)
+//	private Customer customer;
 	public long getStatementId() {
 		return statementId;
 	}
@@ -32,17 +51,16 @@ public class Statement {
 	public void setDueDate(LocalDate dueDate) {
 		this.dueDate = dueDate;
 	}
-	public Customer getCustomer() {
-		return customer;
+	public void setUserId(int iD) {
+		// TODO Auto-generated method stub
+		
 	}
-	public void setCustomer(Customer customer) {
-		this.customer = customer;
+	public int getUserId() {
+		// TODO Auto-generated method stub
+		return 0;
 	}
-	@Override
-	public String toString() {
-		return "Statement [statementId=" + statementId + ", dueAmount=" + dueAmount + ", billingDate=" + billingDate
-				+ ", dueDate=" + dueDate + ", customer=" + customer + "]";
+	public void setUserId1(int iD) {
+		// TODO Auto-generated method stub
+		
 	}
-	
-	
 }
