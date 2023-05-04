@@ -9,8 +9,8 @@ import com.ibm.bean.Account;
 @Component
 public interface IAccountService {
 	public Account addAccount(Account account);
-	public Account removeAccount(long id);
-	public Account updateAccount(long id, Account account);
-	public Account getAccount(long id);
+	public void removeAccount(int accNum);
+	public Account updateAccount(int accNum, Account account);
+	public Account getAccount(int accNum);
 	public List<Account> getAllAccounts();
 }
