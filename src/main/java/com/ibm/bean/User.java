@@ -1,10 +1,8 @@
 package com.ibm.bean;
 
-import javax.persistence.Entity;
-import javax.persistence.Table;
 
-@Entity
-@Table(name = "user_details")
+
+
 public class User {
 	private String userId;
 	private String password;
