@@ -1,15 +1,34 @@
 package com.ibm.bean;
 
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.Table;
+import javax.validation.constraints.NotEmpty;
+import javax.validation.constraints.NotNull;
 
-
-
+@Entity
+@Table(name="address_tables")
 public class Address {
 
+	@Id
+	@Column(name="aid")
+	@GeneratedValue(strategy = GenerationType.AUTO)
+	private int addId;
+	@NotEmpty(message = "Door number can not be null")
 	private String doorNo;
+	@NotEmpty(message = "Street can not be null")
 	private String street;
+	@NotEmpty(message = "Area can not be null")
 	private String area;
+	@NotEmpty(message = "City can not be null")
 	private String city;
+	@NotEmpty(message = "State can not be null")
 	private String state;
+	
+	@NotNull(message = "Pincode can not be null")
 	private int pincode;
 	
 	@Override

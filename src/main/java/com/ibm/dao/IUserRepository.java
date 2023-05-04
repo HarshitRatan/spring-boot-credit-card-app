@@ -1,9 +1,21 @@
 package com.ibm.dao;
 
-import com.ibm.bean.User;
 
-public interface IUserRepository {
-	public User signIn(User user);
-	public User signOut(User user);
-	public User changePassword(long id, User user);
+
+import java.util.Optional;
+
+import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.stereotype.Component;
+import org.springframework.stereotype.Repository;
+
+import com.ibm.bean.User;
+@Repository
+@Component
+public interface IUserRepository extends JpaRepository <User, Integer> {
+
+	Optional<User> findById(long id);
+
+	User findByUserId(String userId);
+	
+	
 }

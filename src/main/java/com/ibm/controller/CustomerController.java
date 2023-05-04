@@ -32,12 +32,12 @@ public class CustomerController {
 			return ResponseEntity.of(Optional.of(allCustomer));
 		} catch (Exception e) {
 			e.printStackTrace();
-			return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).build();
+			return ResponseEntity.status(HttpStatus.BAD_GATEWAY).build();
 		}
 	}
 	
 	@GetMapping("/getCustomerById/{cid}")
-	public ResponseEntity<Customer> getCustomerById(@PathVariable("cid") long id) {
+	public ResponseEntity<Customer> getCustomerById(@PathVariable("cid") int id) {
 		try {
 			Customer customer = service.getCustomer(id);
 			return ResponseEntity.of(Optional.of(customer));
@@ -59,8 +59,9 @@ public class CustomerController {
 	}
 	
 	@PutMapping("/updateCustomer/{cid}")
-	public ResponseEntity<Customer> updateCustomer(@PathVariable("cid") long id, @RequestBody Customer customer) {
+	public ResponseEntity<Customer> updateCustomer(@PathVariable("cid") int id, @RequestBody Customer customer) {
 		try {
+			customer.setUserId((int) id);
 			Customer res = service.updateCustomer(id, customer);
 			return ResponseEntity.of(Optional.of(res));
 		} catch (Exception e) {
@@ -70,7 +71,7 @@ public class CustomerController {
 	}
 	
 	@DeleteMapping("/delete/{cid}")
-	public ResponseEntity<Object> deleteProduct(@PathVariable("cid") long id) {
+	public ResponseEntity<Object> deleteCustomer(@PathVariable("cid") int id) {
 		try {
 			service.removeCustomer(id);
 			return ResponseEntity.accepted().build();

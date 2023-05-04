@@ -1,13 +1,15 @@
 package com.ibm.dao;
 
-import java.util.List;
+import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.stereotype.Component;
 
 import com.ibm.bean.Customer;
 
-public interface ICustomerRepository {
-	public Customer addCustomer(Customer customer);
-	public Customer removeCustomer(long custId);
-	public Customer updateCustomer(long custId, Customer customer);
-	public Customer getCustomer(long custId);
-	public List<Customer> getAllCustomers(); 
+@Component
+public interface ICustomerRepository extends JpaRepository<Customer, Integer> {
+//	public Customer addCustomer(Customer customer);
+//	public Customer removeCustomer(long custId);
+//	public Customer updateCustomer(long custId, Customer customer);
+//	public Customer getCustomer(long custId);
+//	public List<Customer> getAllCustomers(); 
 }

@@ -3,9 +3,6 @@ package com.ibm.bean;
 import java.time.LocalDate;
 import java.time.LocalTime;
 
-
-
-
 public class Transaction {
 	private String status;
 	private String refNo;

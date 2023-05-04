@@ -2,9 +2,6 @@ package com.ibm.bean;
 
 import java.time.LocalDate;
 
-
-
-
 public class CreditCard {
 	private long cardId;
 	private String bankName;
