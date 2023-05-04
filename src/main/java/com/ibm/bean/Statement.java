@@ -2,11 +2,11 @@ package com.ibm.bean;
 
 import java.time.LocalDate;
 
-import javax.persistence.Entity;
-import javax.persistence.Table;
+//import javax.persistence.Entity;
+//import javax.persistence.Table;
 
-@Entity
-@Table(name = "statement_details")
+//@Entity
+//@Table(name = "statement_details")
 public class Statement {	
 	private long statementId;
 	private double dueAmount;
