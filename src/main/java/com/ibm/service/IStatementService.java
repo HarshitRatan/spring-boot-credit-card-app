@@ -14,6 +14,4 @@ public interface IStatementService {
 	public Statement updateStatement(long id, Statement statement);
 	public Statement getStatement(long id);
 	public List<Statement> getAllStatements();
-	public Statement getBilledStatement();
-	public Statement getUnBilledStatement();
 }

@@ -78,27 +78,5 @@ public class StatementController {
 			e.printStackTrace();
 			return ResponseEntity.status(HttpStatus.BAD_REQUEST).build();
 		}
-	}
-	@GetMapping("/getBilledStatement/")
-	public ResponseEntity<Statement> getBilledStatement() {
-		try {
-			Statement statement = service.getBilledStatement();
-			return ResponseEntity.of(Optional.of(statement));
-		} catch (Exception e) {
-			e.printStackTrace();
-			return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).build();
-		}
-	}
-	@GetMapping("/getUnBilledStatement/")
-	public ResponseEntity<Statement> getUnBilledStatement() {
-		try {
-			Statement statement = service.getUnBilledStatement();
-			return ResponseEntity.of(Optional.of(statement));
-		} catch (Exception e) {
-			e.printStackTrace();
-			return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).build();
-		}
-	}
-
-	
+	}	
 }

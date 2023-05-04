@@ -42,6 +42,7 @@ public class IAccountServiceImplementation implements IAccountService{
 	@Override
 	public Account updateAccount(int accNum, Account account) {
 		System.out.println("Hello from updateAccount with accNum " + accNum + " And " + account);
+		account.setAccountNumber(accNum);
 		int num = account.getAccNum();
 		Account c = dao.findById(num).get();
 		
