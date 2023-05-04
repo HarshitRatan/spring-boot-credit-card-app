@@ -7,9 +7,5 @@ import com.ibm.bean.Customer;
 
 @Component
 public interface ICustomerRepository extends JpaRepository<Customer, Integer> {
-//	public Customer addCustomer(Customer customer);
-//	public Customer removeCustomer(long custId);
-//	public Customer updateCustomer(long custId, Customer customer);
-//	public Customer getCustomer(long custId);
-//	public List<Customer> getAllCustomers(); 
+
 }

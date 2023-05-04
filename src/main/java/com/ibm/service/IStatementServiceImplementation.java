@@ -4,6 +4,7 @@ import java.time.LocalTime;
 import java.util.List;
 import java.util.Optional;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 import com.ibm.bean.Statement;
@@ -13,6 +14,7 @@ import com.ibm.dao.IStatementRepository;
 public class IStatementServiceImplementation implements IStatementService{
 
 	
+	@Autowired
 	private IStatementRepository dao;
 
 	@Override
@@ -22,7 +24,7 @@ public class IStatementServiceImplementation implements IStatementService{
 		String a = Integer.toString(time.getNano()/100000);
 		String b = Integer.toString(time.getSecond());
 		int ID = Integer.parseInt(b+a);
-		statement.setUserId(ID);
+		statement.setStatementId((long) ID);
 		Statement res =  dao.save(statement);
 		return res;
 	}
@@ -31,17 +33,15 @@ public class IStatementServiceImplementation implements IStatementService{
 	public void removeStatement(long id) {
 		System.out.println("Hello From removeStatement with id " + id);
 		dao.deleteById(id);
-	
 	}
     
 	@Override
 	public Statement updateStatement(long id, Statement statement) {
 		System.out.println("Hello From updateStatement with id " + id + "And value " + statement);
+		statement.setStatementId(id);
 		Statement s = dao.findById(id).get();
-		
 		Statement result = null;
-		
-		if(s.getUserId() == statement.getUserId()) {
+		if(s.getStatementId() == statement.getStatementId()) {
 			result = dao.save(statement);
 		}
 		return result;
@@ -59,18 +59,6 @@ public class IStatementServiceImplementation implements IStatementService{
 		System.out.println("Hello From getAllStatements");
 		List<Statement> result = dao.findAll();
 		return result;
-	}
-
-	@Override
-	public Statement getBilledStatement() {
-		System.out.println("Hello From getBilledStatement");
-		return null; 
-	}
-
-	@Override
-	public Statement getUnBilledStatement() {
-		System.out.println("Hello From getUnBilledStatement");
-		return null;
 	}
 
 }
