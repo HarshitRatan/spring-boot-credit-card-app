@@ -1,10 +1,5 @@
 package com.ibm.bean;
 
-//import javax.persistence.Entity;
-//import javax.persistence.Table;
-
-//@Entity
-//@Table(name = "account_details")
 public class Account {
 	private long accountNumber;
 	private String accountName;

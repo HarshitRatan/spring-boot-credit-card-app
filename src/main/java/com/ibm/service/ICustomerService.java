@@ -9,8 +9,8 @@ import com.ibm.bean.Customer;
 @Component
 public interface ICustomerService {
 	public Customer addCustomer(Customer customer);
-	public Customer removeCustomer(long custId);
-	public Customer updateCustomer(long custId, Customer customer);
-	public Customer getCustomer(long custId);
+	public void removeCustomer(int custId);
+	public Customer updateCustomer(int custId, Customer customer);
+	public Customer getCustomer(int custId);
 	public List<Customer> getAllCustomers(); 
 }
