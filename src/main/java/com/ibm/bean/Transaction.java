@@ -3,11 +3,9 @@ package com.ibm.bean;
 import java.time.LocalDate;
 import java.time.LocalTime;
 
-import javax.persistence.Entity;
-import javax.persistence.Table;
 
-@Entity
-@Table(name = "transaction_details")
+
+
 public class Transaction {
 	private String status;
 	private String refNo;
