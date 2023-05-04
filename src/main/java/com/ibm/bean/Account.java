@@ -9,7 +9,6 @@ import javax.validation.constraints.NotEmpty;
 
 @Entity
 @Table(name="account_info")
-
 public class Account {
 	@Id
 	@Column(name="anum")

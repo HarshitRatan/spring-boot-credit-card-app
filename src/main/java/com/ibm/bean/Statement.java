@@ -2,9 +2,6 @@ package com.ibm.bean;
 
 import java.time.LocalDate;
 
-
-
-
 public class Statement {	
 	private long statementId;
 	private double dueAmount;
