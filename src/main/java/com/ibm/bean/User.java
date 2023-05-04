@@ -31,8 +31,8 @@ public class User {
 	public String getUserId() {
 		return userId;
 	}
-	public void setUserId(String userId) {
-		this.userId = userId;
+	public void setUserId(@NotBlank(message = "USERID cant be null or whitespace") String iD2) {
+		this.userId = iD2;
 	}
 	public String getPassword() {
 		return password;
@@ -61,6 +61,10 @@ public class User {
 	public User() {
 		super();
 		// TODO Auto-generated constructor stub
+	}
+	public void setUserId1(int iD2) {
+		// TODO Auto-generated method stub
+		
 	}
 	
 	
