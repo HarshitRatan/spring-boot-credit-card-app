@@ -1,16 +1,17 @@
 package com.ibm.dao;
 
-import java.util.List;
+import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.stereotype.Component;
 
 import com.ibm.bean.CreditCard;
 
-
-public interface ICreditCardRepository {
-	public CreditCard addCreditCard(CreditCard creditCard);
-	public CreditCard removeCreditCard(long cardId);
-	public CreditCard updateCreditCard(long cardId, CreditCard card);
-	public CreditCard getCreditCard(long cardId);
-	public List<CreditCard> getAllCreditCards(); 
+@Component
+public interface ICreditCardRepository extends JpaRepository<CreditCard, Long> {
+//	public CreditCard addCreditCard(CreditCard creditCard);
+//	public CreditCard removeCreditCard(long cardId);
+//	public CreditCard updateCreditCard(long cardId, CreditCard card);
+//	public CreditCard getCreditCard(long cardId);
+//	public List<CreditCard> getAllCreditCards(); 
 
 
 }
