@@ -1,19 +1,32 @@
 package com.ibm.bean;
 
-import java.time.LocalDate;
-
+import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.Id;
 import javax.persistence.Table;
+import javax.validation.constraints.NotEmpty;
 
 @Entity
-@Table(name = "credit_card_details")
+@Table(name = "creditcard_tables")
 public class CreditCard {
+	
+	@Id
 	private long cardId;
+	
+	@NotEmpty(message = "Name can not be Null or Empty")
+	@Column(name = "bankname")
 	private String bankName;
+	
 	private String cardType;
+	
+	@NotEmpty(message = "Name can not be Null or Empty")
+	@Column(name = "cardname")
 	private String cardName;
+	
+	@NotEmpty(message = "Number can not be Null or Empty")
+	@Column(name = "cardNumber")
 	private String cardNumber;
-    private LocalDate cardExpiry;
+    private String cardExpiry;
 	private int cvv;
 	public long getCardId() {
 		return cardId;
@@ -45,10 +58,10 @@ public class CreditCard {
 	public void setCardNumber(String cardNumber) {
 		this.cardNumber = cardNumber;
 	}
-	public LocalDate getCardExpiry() {
+	public String getCardExpiry() {
 		return cardExpiry;
 	}
-	public void setCardExpiry(LocalDate cardExpiry) {
+	public void setCardExpiry(String cardExpiry) {
 		this.cardExpiry = cardExpiry;
 	}
 	public int getCvv() {

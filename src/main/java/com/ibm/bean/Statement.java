@@ -1,18 +1,28 @@
 package com.ibm.bean;
 
-import java.time.LocalDate;
-
+import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.Id;
 import javax.persistence.Table;
 
 @Entity
-@Table(name = "statement_details")
+@Table(name="Statement_tables")
 public class Statement {	
+	@Id
+	@Column(name="sid")
 	private long statementId;
+	
+	@Column(name="dueamt")
+//	@NotEmpty(message="dueAmount can not be more than 500 ")
 	private double dueAmount;
-	private LocalDate billingDate;
-	private LocalDate dueDate;
-	private Customer customer;
+	
+	@Column(name="billingamt")
+//	@NotEmpty(message="billingDate can not exceed a month ")
+	private String billingDate;
+	
+	@Column(name="duedate")
+	private String dueDate;
+	
 	public long getStatementId() {
 		return statementId;
 	}
@@ -25,29 +35,16 @@ public class Statement {
 	public void setDueAmount(double dueAmount) {
 		this.dueAmount = dueAmount;
 	}
-	public LocalDate getBillingDate() {
+	public String getBillingDate() {
 		return billingDate;
 	}
-	public void setBillingDate(LocalDate billingDate) {
+	public void setBillingDate(String billingDate) {
 		this.billingDate = billingDate;
 	}
-	public LocalDate getDueDate() {
+	public String getDueDate() {
 		return dueDate;
 	}
-	public void setDueDate(LocalDate dueDate) {
+	public void setDueDate(String dueDate) {
 		this.dueDate = dueDate;
 	}
-	public Customer getCustomer() {
-		return customer;
-	}
-	public void setCustomer(Customer customer) {
-		this.customer = customer;
-	}
-	@Override
-	public String toString() {
-		return "Statement [statementId=" + statementId + ", dueAmount=" + dueAmount + ", billingDate=" + billingDate
-				+ ", dueDate=" + dueDate + ", customer=" + customer + "]";
-	}
-	
-	
 }

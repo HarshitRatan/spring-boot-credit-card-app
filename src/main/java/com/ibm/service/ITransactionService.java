@@ -9,7 +9,7 @@ import com.ibm.bean.Transaction;
 @Component
 public interface ITransactionService {
 	public Transaction addTransaction(Transaction transaction);
-	public Transaction removeTransaction(long id);
+	public void removeTransaction(long id);
 	public Transaction updateTransaction(long id, Transaction transaction);
 	public Transaction getTransactionDetails(long id);
 	public List<Transaction> getAllTransactions(); 
