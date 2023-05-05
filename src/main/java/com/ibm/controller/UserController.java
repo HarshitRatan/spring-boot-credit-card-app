@@ -38,7 +38,7 @@ public class UserController {
 	public User addUser(@RequestBody User user) {
 		return service.addUser(user);	
 	}
-	@DeleteMapping("/deleteUser")
+	@DeleteMapping("/deleteUser/{id}")
 	public ResponseEntity<Object> deleteUser(@PathVariable("id") long id) {
 		try {
 			service.removeUser(id);

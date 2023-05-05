@@ -6,15 +6,9 @@ import org.springframework.stereotype.Component;
 
 import com.ibm.bean.User;
 @Component
-public interface IUserRepository extends JpaRepository <User, Integer> {
+public interface IUserRepository extends JpaRepository <User, Long> {
 
 	Optional<User> findById(long id);
 
 	User findByUserId(String userId);
-
-	void deleteById(long id);
-
-	
-	
-	
 }
